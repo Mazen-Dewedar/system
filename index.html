@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav style="width: 100vw;" class="navbar navbar-expand-lg bg-dark  d-flex justify-content-center">
+        <div class="container d-flex justify-content-between text-white">
+            <a class="navbar-brand text-white" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <button id="button1" class="btn btn-primary" onclick="showProducts()">Show products</button>
+        <button class="btn btn-success" onclick="openWindow()">Add product</button>
+    </div>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div onclick="closeWindow()" class="modall d-none justify-content-center align-items-center">
+        <div onclick="event.stopPropagation()" id="form" class="form d-flex d-flex flex-column justify-content-center align-content-between gap-3">
+            <p style="font-weight: bold;" class="text-center">Add Product</p>
+            <input class="form-control" type="text" name="name" id="name" placeholder="Enter Product Name" required>
+            <input class="form-control" type="number" name="price" id="price" placeholder="Enter Product price" required>
+            <input class="form-control" type="number" name="qty" id="qty" placeholder="Enter Product quantity" required>
+            <button onclick="addProducts()" class="btn btn-success">Add</button>
+        </div>
+    </div>
+    <div onclick="closeWindow2()" class="modall2 d-none justify-content-center align-items-center">
+        <div onclick="event.stopPropagation()" id="form2" class="form2 d-flex d-flex flex-column justify-content-center align-content-between gap-3">
+            <p style="font-weight: bold;" class="text-center">Edit Product</p>
+            <input class="form-control" type="text" name="name2" id="name2" placeholder="Enter Product Name" required>
+            <input class="form-control" type="number" name="price2" id="price2" placeholder="Enter Product price" required>
+            <input class="form-control" type="number" name="qty2" id="qty2" placeholder="Enter Product quantity" required>
+            <button onclick="editProducts2()" class="btn btn-success">Edit</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
