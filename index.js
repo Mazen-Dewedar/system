@@ -122,3 +122,14 @@ let editProducts2 = () => {
     open = true;
     showProducts();
 }
+let burger =document.querySelector('#menu')
+let isOpen = false;
+let navbarShow=()=>{
+    if(!isOpen){
+        burger.classList.replace("d-none","d-flex")
+        isOpen=false;
+    }else{
+        burger.classList.replace("d-flex","d-none")
+        isOpen=true;
+    }
+}
